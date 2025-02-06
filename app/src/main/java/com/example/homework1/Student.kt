@@ -4,5 +4,5 @@ class Student constructor(var name:String, var major:String, /*var courses:List<
 
     fun totalCredits():Unit {
         //calculates the total credit from the list of courses taken and returns that value
-    }
+    } //36 hours  = 12 credits
 }
