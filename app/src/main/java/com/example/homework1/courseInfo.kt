@@ -8,7 +8,5 @@ data class courseInfo(var courseName:String, var startTime:String, var endTime:S
     var start = startTime
     var end = endTime
 
-    val display =
-        
-        CourseDisplay(course, start, end)
+
 }

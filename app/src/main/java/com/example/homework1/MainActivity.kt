@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,7 +30,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            var student = Student("john", "fkf")
+            List<courseInfo> = {}
+            var student = Student("john", "fkf", )
 
             Surface {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -38,6 +41,7 @@ class MainActivity : ComponentActivity() {
 
                         MainScreen(Modifier.padding(innerPadding).fillMaxSize(),"Heading", "Normal Text")
                         StudentDisplay(student)
+                        TotalButtons(student)
                     }
                 }
             }
@@ -57,10 +61,22 @@ fun MainScreen(modifier:Modifier, heading:String, text:String) {
 fun StudentDisplay(student:Student) {
     Text(text = student.name)
     Text(text = student.major)
+
 }
 
 @Composable
 fun CourseDisplay(course:String, start:String, end:String) {
 
 }
+
+@Composable
+fun TotalButton(s:Student) {
+    // Should use a surface
+    Modifier.padding(20.dp).shadow(30.dp)
+    Shapes(RoundedCornerShape(10.dp))
+    Button(onClick = {}) {Text("Total Credits") }
+
+
+}
+
 
